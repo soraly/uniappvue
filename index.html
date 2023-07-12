@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  <meta name="referrer" content="no-referrer">
+      <meta name="format-detection" content="telephone=no" />
+
+      <!--删除苹果默认的工具栏和菜单栏，默认为no显示工具栏和菜单栏。-->
+
+      <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+      <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+      <!--QQ强制全屏-->
+
+      <meta name="x5-fullscreen" content="true">
+
+      <!-- UC强制全屏 -->
+
+      <meta name="fullscreen" content="yes">
+      <link rel="shortcut icon" href="/static/ico.png" type="image/x-icon">
+      <title>
+          <%= htmlWebpackPlugin.options.title %>
+      </title>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-7CDXCWS4FP"></script>
+      <script src="./configuration.js"></script>
+      <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-7CDXCWS4FP');
+      </script>
+	<script>
+        var coverSupport = 'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') ||
+		CSS.supports('top: constant(a)'))
+	  document.write(
+		'<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' +
+		(coverSupport ? ', viewport-fit=cover' : '') + '" />')
+
+        // // 禁用双指放大
+        // document.documentElement.addEventListener('touchstart', function (event) {
+        //     if (event.touches.length > 1) {
+        //         event.preventDefault();
+        //     }
+        // }, {
+        //     passive: false
+        // });
+        //
+        // // 禁用双击放大
+        // var lastTouchEnd = 0;
+        // document.documentElement.addEventListener('touchend', function (event) {
+        //     var now = Date.now();
+        //     if (now - lastTouchEnd <= 300) {
+        //         event.preventDefault();
+        //     }
+        //     lastTouchEnd = now;
+        // }, {
+        //     passive: false
+        // });
+    </script>
+      <link rel="stylesheet" href="<%= BASE_URL %>static/index.<%= VUE_APP_INDEX_CSS_HASH %>.css" />
+    <!--preload-links-->
+    <!--app-context-->
+  </head>
+  <body>
+
+    <div id="app"><!--app-html--></div>
+  </body>
+</html>

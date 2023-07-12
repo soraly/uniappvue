@@ -1,0 +1,69 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3740108 */
+  src: url('/static/iconfont.ttf?t=1677835610523') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.uniui-sanjiaoxing_shang:before {
+  content: "\e654";
+}
+
+.uniui-sanjiaoxing_shang-copy:before {
+  content: "\e655";
+}
+
+.uniui-rili:before {
+  content: "\e68b";
+}
+
+.uniui-xiugaiziliao:before {
+  content: "\e7e0";
+}
+
+.uniui-xiugai:before {
+  content: "\e8cf";
+}
+
+.uniui-shangjiantou:before {
+  content: "\e600";
+}
+
+.uniui-sanjiaoright:before {
+  content: "\e6b7";
+}
+
+.uniui-arrow_right_fat:before {
+  content: "\e62c";
+}
+
+.uniui-cuowuguanbiquxiao-yuankuang:before {
+  content: "\e8e7";
+}
+
+.uniui-comment:before {
+  content: "\e7f5";
+}
+
+.uniui-huifu:before {
+  content: "\e7bf";
+}
+
+.uniui-pinglun:before {
+  content: "\e602";
+}
+
+.uniui-jiantouright:before {
+  content: "\e603";
+}
+
+.uniui-jiantouxia:before {
+  content: "\e6bb";
+}
+

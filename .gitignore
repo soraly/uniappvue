@@ -1,0 +1,9 @@
+node_modules/
+/dist/
+.hbuilderx/
+unpackage/
+.DS_store/
+.idea/
+.idea
+.vscode/
+pages.json

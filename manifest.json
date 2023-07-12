@@ -1,0 +1,152 @@
+{
+    "name" : "%app.name%",
+    "appid" : "__UNI__C069B6F",
+    "description" : "",
+    "versionName" : "1.0.0",
+    "versionCode" : "100",
+    "locale" : "zh-Hans",
+    "transformPx" : false,
+    "compatConfig" : {
+        "MODE" : 2
+    },
+    "app-plus" : {
+        "usingComponents" : true,
+        "compilerVersion" : 3,
+        "modules" : {
+            "LivePusher" : {},
+            "Webview-x5" : {},
+            "VideoPlayer" : {},
+            "Camera" : {},
+            "Bluetooth" : {}
+        },
+        "distribute" : {
+            "android" : {
+                "permissions" : [
+                    "<uses-feature android:name=\"android.hardware.camera\"/>",
+                    "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CAMERA\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
+                    "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
+                    "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+                    "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
+                ],
+                "abiFilters" : [ "armeabi-v7a", "arm64-v8a", "x86" ]
+            },
+            "ios" : {
+                "dSYMs" : false,
+                "UIBackgroundModes" : "audio,location",
+                "privacyDescription" : {
+                    "NSPhotoLibraryUsageDescription" : "NSPhotoLibraryUsageDescription",
+                    "NSPhotoLibraryAddUsageDescription" : "NSPhoteLibraryAddUsageDescription"
+                }
+            },
+            "sdkConfigs" : {
+                "share" : {
+                    "weixin" : {
+                        "appid" : "",
+                        "UniversalLinks" : ""
+                    }
+                },
+                "ad" : {}
+            },
+            "icons" : {
+                "android" : {
+                    "hdpi" : "unpackage/res/icons/72x72.png",
+                    "xhdpi" : "unpackage/res/icons/96x96.png",
+                    "xxhdpi" : "unpackage/res/icons/144x144.png",
+                    "xxxhdpi" : "unpackage/res/icons/192x192.png"
+                },
+                "ios" : {
+                    "appstore" : "unpackage/res/icons/1024x1024.png",
+                    "ipad" : {
+                        "app" : "unpackage/res/icons/76x76.png",
+                        "app@2x" : "unpackage/res/icons/152x152.png",
+                        "notification" : "unpackage/res/icons/20x20.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "proapp@2x" : "unpackage/res/icons/167x167.png",
+                        "settings" : "unpackage/res/icons/29x29.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "spotlight" : "unpackage/res/icons/40x40.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png"
+                    },
+                    "iphone" : {
+                        "app@2x" : "unpackage/res/icons/120x120.png",
+                        "app@3x" : "unpackage/res/icons/180x180.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "notification@3x" : "unpackage/res/icons/60x60.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "settings@3x" : "unpackage/res/icons/87x87.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png",
+                        "spotlight@3x" : "unpackage/res/icons/120x120.png"
+                    }
+                }
+            },
+            "splashscreen" : {
+                "androidStyle" : "default"
+            }
+        },
+        "splashscreen" : {
+            "alwaysShowBeforeRender" : false
+        }
+    },
+    "quickapp" : {},
+    "mp-weixin" : {
+        "appid" : "",
+        "setting" : {
+            "urlCheck" : true
+        },
+        "usingComponents" : true
+    },
+    "vueVersion" : "2",
+    "h5" : {
+        "title" : "图库",
+        "router" : {
+            "mode" : "hash",
+            "base" : "./"
+        },
+        "devServer" : {
+            "https" : false,
+            "disableHostCheck" : true,
+            "proxy" : {
+                "/interface" : {
+                    "testTarget" : "http://66136.cc:8091/",
+                    "devTarget" : "http://devh5.558888666.com",
+                    "target" : "http://devh5.558888666.com:8091/",
+                    "changeOrigin" : true,
+                    "secure" : true,
+                    "pathRewrite" : {
+                        "^/interface" : ""
+                    }
+                },
+                "/out" : {
+                    "testTarget" : "http://66136.cc:8091/",
+                    "devTarget" : "http://devh5.558888666.com",
+                    "target" : "http://devh5.558888666.com:8091/",
+                    "changeOrigin" : true,
+                    "secure" : true,
+                    "pathRewrite" : {
+                        "^/out" : ""
+                    }
+                }
+            }
+        },
+        "unipush" : {
+            "enable" : false
+        },
+        "template" : "index.html",
+        "optimization" : {
+            "treeShaking" : {
+                "enable" : true
+            }
+        }
+    },
+    "fallbackLocale" : "zh-Hans"
+}
