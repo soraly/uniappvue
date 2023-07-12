@@ -43,15 +43,17 @@ export default {
       safeHeight: uni.getStorageSync('systemInfo').safeArea.top + "px",
       nickname: "186****142616355",
       avatarPath: "",
-      userInfo: {
-        headImgUrl: "",
-        nickname: ""
-      }
     }
   },
   onLoad() {
 
   },
+  computed:{
+    userInfo(){
+      return this.$store.state.appInfoStore.userInfo||nll;
+    }
+  },
+
   onShow() {
     this.isLogin = global.isLogin()
     if (this.isLogin) {
@@ -101,14 +103,7 @@ export default {
       });
 
     },
-    //获取个人信息
-    getUserInfo() {
-      info().then(res => {
-        if (res.code === 200) {
-          this.userInfo = res.result
-        }
-      })
-    },
+
     toNickname() {//前往我的昵称
       uni.navigateTo({
         url: "/pages/user/setting/nickname",

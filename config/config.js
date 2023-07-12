@@ -6,7 +6,9 @@ var isDebug = true;
 //是否为开发环境
 var isDev = true;
 //当前站点对应环境
-var station = configEnums.STATION.LIUHE;//ALL LIUHE LUNTAN
+
+var station = configEnums.STATION.ALL;//ALL LIUHE LUNTAN
+
 
 
 // #ifdef H5
