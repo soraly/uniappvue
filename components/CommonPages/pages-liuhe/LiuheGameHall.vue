@@ -1,7 +1,7 @@
 <template>
     <scroll-view class="lottery-page" :scroll-y="isScrollY" :scroll-top="scrollTop" :enable-flex="true"
         :scroll-with-animation="true" @scroll="scroll" :style="{ marginTop: safeHeight }">
-        <nav-bar :fontColor="'#FFFFFF'" :title="title" :titleStyle="titleStyle" :isBack="config.station === 'ALL'"
+        <nav-bar :fontColor="'#FFFFFF'" :title="title" :titleStyle="titleStyle" :isBack="!showTabBar"
             :headerStyle="headerStyle">
         </nav-bar>
         <view class="search">
@@ -41,7 +41,7 @@
                 </view>
                 <view v-if="distanceX > 0" class="load-text">{{ loadText }}</view>
                 <view class="menu"
-                    :style="{ paddingBottom: config.station === 'ALL' ? '10rpx' : '110rpx', position: 'relative', left: `${distanceX}px` }"
+                    :style="{ paddingBottom: !showTabBar ? '10rpx' : '110rpx', position: 'relative', left: `${distanceX}px` }"
                     :class="{ isTopH: isTop }">
                     <view class="lottery_bg lottery lotterys data-box" name="lottery_01" v-if="category.dataType == '0'"
                         style="margin-top: 3px;">
@@ -104,7 +104,7 @@
             </view>
         </uni-popup>
 
-        <TabBar :current="1" v-if="config.station !== 'ALL'" />
+        <TabBar :current="1" v-if="showTabBar" />
         <TestLogin ref="testLogin"></TestLogin>
         <AlertInjectLayer />
     </scroll-view>
@@ -129,7 +129,6 @@ import { advertList, notice, demoLogin } from "@/utils/common/index";
 import { categories, categoryData } from "@/utils/lottery/list"
 import { init, userNewlyPlay } from "@/utils/lottery/mine";
 import { style2GameCollectList } from "@/utils/lottery/list"
-import { config } from '@/config/config.js'
 
 export default {
     name: "index",
@@ -147,9 +146,11 @@ export default {
         CategoryItem,
         Empty
     },
+    props: {
+        showTabBar: Boolean
+    },
     data() {
         return {
-            config,
             safeHeight: uni.getStorageSync('systemInfo').safeArea.top + "px",
             title: '游戏大厅',
             headerStyle: {

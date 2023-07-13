@@ -22,9 +22,14 @@
           <view class="left">
             <span>{{ item.shorNo }}期</span>
           </view>
-          <view class="number-box">
-            <view class="ball" v-for="ball in setBalls(item.lotteryResult)">
-              <text>{{ball}}</text>
+          <view class="right-box">
+            <view class="number-box">
+              <view class="ball" v-for="ball in setBalls(item.lotteryResult)">
+                <text>{{ball}}</text>
+              </view>
+            </view>
+            <view class="result-detail">
+              {{ item.resultDetail }}
             </view>
           </view>
         </view>
@@ -103,7 +108,7 @@ export default {
   //z-index: 1;
   .list-row{
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     .list-col{
       display: flex;
       justify-content: center;
@@ -123,6 +128,8 @@ export default {
       font-size: 25rpx;
       line-height: 36rpx;
       text-align: center;
+      padding-left: 30rpx;
+      padding-right: 120rpx;
     }
   }
 }
@@ -138,18 +145,25 @@ export default {
     }
     .list-box-item{
       display: flex;
-      justify-content: space-around;
+      justify-content: flex-start;
       box-sizing: border-box;
       background: #CCDBEE;
       width: 100%;
-      height: 80rpx;
-      line-height: 80rpx;
+      height: 120rpx;
       .left{
         font-size: 26rpx;
         color: #458198;
-        width: 232rpx;
+        width: 180rpx;
         display: flex;
+        align-items: center;
         justify-content: center;
+      }
+      .right-box {
+        margin-left: 50rpx;
+        .result-detail {
+          font-size: 26rpx;
+          color: rgba(3, 83, 110, 0.6)
+        }
       }
       .number-box{
         padding-top: 10rpx;

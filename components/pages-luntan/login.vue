@@ -44,7 +44,6 @@
 </template>
 
 <script>
-import { config } from '@/config/config.js'
 import { login, getVCode } from "@/utils/common/index.js";
 import { checkPhone, codeCheck } from "@/utils/common.js"
 import NavBar from "@/components/common/navBar/navBar";
@@ -172,13 +171,13 @@ export default {
         uni.setStorageSync('token', res.result.token);
 
         const urlMap = {
-          all: '/pages/user/index',
-          liuhe: '/pages/pages-liuhe/index',
-          luntan: '/pages/pages-luntan/index'
+          ALL: '/pages/user/index',
+          LIUHE: '/pages/pages-liuhe/index',
+          LUNTAN: '/pages/pages-luntan/index'
         }
 
         uni.reLaunch({
-          url: urlMap[config.station] // 返回的页面数，如果 delta 大于现有页面数，则返回到首页
+          url: urlMap[this.$config.station] // 返回的页面数，如果 delta 大于现有页面数，则返回到首页
         });
       }).catch(err => {
         console.log(err)

@@ -1,5 +1,5 @@
 <template>
-    <LiuheGameHall ref="LiuheGameHallRef" />
+    <LiuheGameHall ref="LiuheGameHallRef" showTabBar />
 </template>
 
 <script>

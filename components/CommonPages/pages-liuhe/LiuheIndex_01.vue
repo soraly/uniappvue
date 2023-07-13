@@ -181,7 +181,7 @@ height: 34rpx;"></image>
             <TestLogin ref="testLogin"></TestLogin>
 
         </scroll-view>
-        <HomePop />
+        <HomePop v-if="$config.station !== 'ALL'" />
         <alert-inject-layer></alert-inject-layer>
     </view>
 </template>

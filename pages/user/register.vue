@@ -69,7 +69,6 @@
 </template>
 
 <script>
-import { config } from '@/config/config.js'
 import { getVCode, regAndLogin, checkCode, updateUser } from '../../utils/common/index.js'
 import { checkPhone, codeCheck } from "../../utils/common.js"
 import AlertInjectLayer from "@/components/common/alert/AlertInjectLayer.vue"
@@ -121,7 +120,7 @@ export default {
           const tempFilePaths = chooseImageRes.tempFilePaths;
           let token = uni.getStorageSync('token')
           uni.uploadFile({
-            url: config.me_base_url + '/api/user/upImg', //仅为示例，非真实的接口地址
+            url: this.$config.me_base_url + '/api/user/upImg', //仅为示例，非真实的接口地址
             filePath: tempFilePaths[0],
             name: 'file',
             header: { 'X-Access-Token': token },
@@ -215,13 +214,13 @@ export default {
     //跳过
     tiaoguo: function () {
       const urlMap = {
-        all: '/pages/home/index/Index',
-        liuhe: '/pages/pages-liuhe/index',
-        luntan: '/pages/pages-luntan/index'
+        ALL: '/pages/home/index/Index',
+        LIUHE: '/pages/pages-liuhe/index',
+        LUNTAN: '/pages/pages-luntan/index'
       }
 
       uni.reLaunch({
-        url: urlMap[config.station] // 返回的页面数，如果 delta 大于现有页面数，则返回到首页
+        url: urlMap[this.$config.station] // 返回的页面数，如果 delta 大于现有页面数，则返回到首页
       });
     },
     //设置资料
