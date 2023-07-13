@@ -91,6 +91,7 @@ export default {
 
     setStyle(index,len){
       let defaultWidth="50%";
+      console.log(index, len, 'nnn')
       if(len<=5){
           if(len%2!=0 && index==len-1){
               defaultWidth = "100%";
